@@ -1,28 +1,36 @@
 import sys
 
+# Global variables
 inventory = 0 
 
 
+# ===========================
+# Functions
+# ===========================
 def get_valid_input():
     
     user_input = input("Enter stock quantity (or type 'quit' to exit): ")
 
     while user_input.lower() != 'quit':
-        if user_input.lower() == 'quit':
-                return 'Quit'
-                sys.exit()
-        elif not user_input.isdigit() or int(user_input) < 0:
-                print("Error! Please enter a valid integer.")
-                user_input = input("Enter stock quantity (or type 'quit' to exit): ")
-                # failed_attempts +=1
-        else:
-                # pass user_input value to process_delivery()
-                return int(user_input)
+        if not user_input.isdigit() or int(user_input) < 0:
+            print("Error! Please enter a valid integer.")
+            user_input = input("Enter stock quantity (or type 'quit' to exit): ")
+            # failed_attempts +=1
+        elif user_input.lower() == 'quit':
+            return 'Quit'
+        else:    
+            return int(user_input)
         
 
-def process_delivery(quantity):
-    print(quantity)
+def process_delivery(current_total, new_value):
+    current_total += new_value
+    return current_total
 
 
-get_valid_input()
-process_delivery(get_valid_input())
+
+# ===========================
+# Calling Functions
+# ===========================
+while True:
+    new_value = get_valid_input()
+    process_delivery(inventory, new_value)
