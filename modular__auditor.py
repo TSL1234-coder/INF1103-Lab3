@@ -27,6 +27,12 @@ def process_delivery(current_total, new_value):
     return current_total
 
 
+def calculate_tax(amount):
+    tax_amount = amount * 0.1
+    print("Tax amount: " + str(tax_amount))
+    return tax_amount
+
+
 
 # ===========================
 # Calling Functions
