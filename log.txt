@@ -1,4 +1,10 @@
-commit ea4fea7d97f9544165adcd6af7a13ff317c35356 (HEAD -> main, origin/main)
+commit 2e94188d8f30139628368cede0569c92e188f120 (HEAD -> main, origin/main)
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 14:02:31 2026 +0800
+
+    Added dockerfile and logfile
+
+commit ea4fea7d97f9544165adcd6af7a13ff317c35356
 Author: Si Liang <2605328@sit.singaporetech.edu.sg>
 Date:   Fri Sep 18 13:59:38 2026 +0800
 
