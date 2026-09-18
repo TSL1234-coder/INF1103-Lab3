@@ -14,7 +14,7 @@ def get_valid_input():
         if user_input.lower() == "quit":
             return "quit", failed_attempts
 
-        if not user_input.isdigit():
+        if not user_input.isdigit() or int(user_input) < 0:
             print("Error! Please enter a valid integer.")
             failed_attempts += 1
         else:
