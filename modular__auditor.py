@@ -2,7 +2,7 @@ import sys
 
 # Global variables
 inventory = 0 
-
+failed_attempts = 0
 
 # ===========================
 # Functions
@@ -15,15 +15,19 @@ def get_valid_input():
         if not user_input.isdigit() or int(user_input) < 0:
             print("Error! Please enter a valid integer.")
             user_input = input("Enter stock quantity (or type 'quit' to exit): ")
-            # failed_attempts +=1
+            failed_attempts = failed_attempts + 1
+
         elif user_input.lower() == 'quit':
+            generate_report(inventory, failed_attempts)
             return 'Quit'
+
         else:    
             return int(user_input)
         
 
 def process_delivery(current_total, new_value):
-    current_total += new_value
+
+    current_total = current_total +  new_value
     return current_total
 
 
@@ -32,6 +36,11 @@ def calculate_tax(amount):
     print("Tax amount: " + str(tax_amount))
     return tax_amount
 
+def generate_report(total_units, rejected_entries):
+    print("Inventory Report:")
+    print("===================")
+    print(f"Total Units Processed: {str(total_units)}")
+    print(f"Total Rejected Entries: {str(rejected_entries)}")
 
 
 # ===========================
