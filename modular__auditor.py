@@ -1,54 +1,65 @@
-import sys
-
-# Global variables
-inventory = 0 
-total_deliveries = 0
-failed_attempts = 0
 
 # ===========================
 # Functions
 # ===========================
+
 def get_valid_input():
-    
-    user_input = input("Enter stock quantity (or type 'quit' to exit): ")
+    failed_attempts = 0
 
-    while user_input.lower() != 'quit':
-        if not user_input.isdigit() or int(user_input) < 0:
+    while True:
+        user_input = input(
+            "Enter stock quantity (or type 'quit' to exit): "
+        )
+
+        if user_input.lower() == "quit":
+            return "quit", failed_attempts
+
+        if not user_input.isdigit():
             print("Error! Please enter a valid integer.")
-            user_input = input("Enter stock quantity (or type 'quit' to exit): ")
-            failed_attempts = failed_attempts + 1
+            failed_attempts += 1
+        else:
+            return int(user_input), failed_attempts
 
-        elif user_input.lower() == 'quit':
-            generate_report(inventory, failed_attempts)
-            return 'Quit'
-
-        else:    
-            return int(user_input)
-        
 
 def process_delivery(current_total, new_value):
-    if new_value != None:
-        current_total = current_total +  new_value
-        total_deliveries = total_deliveries + 1
-
-    return current_total
+    new_total = current_total + new_value
+    return new_total
 
 
 def calculate_tax(amount):
     tax_amount = amount * 0.1
-    print("Tax amount: " + str(tax_amount))
     return tax_amount
 
-def generate_report(delivery_count, rejected_entries):
-    print("Inventory Report:")
+
+def generate_report(total_units, failed_attempts):
+    print("\nInventory Report:")
     print("===================")
-    print(f"Total Delivery Processed: {str(delivery_count)}")
-    print(f"Total Rejected Entries: {str(rejected_entries)}")
+    print(f"Total Deliveries Processed: {total_units}")
+    print(f"Total Rejected Entries: {failed_attempts}")
 
 
 # ===========================
-# Calling Functions
+# Main Program
 # ===========================
+
+inventory = 0
+total_deliveries = 0
+failed_attempts = 0
+
 while True:
-    new_value = get_valid_input()
-    process_delivery(inventory, new_value)
+    new_value, rejected = get_valid_input()
+
+    failed_attempts += rejected
+
+    if new_value == "quit":
+        generate_report(total_deliveries, failed_attempts)
+        break
+
+    inventory = process_delivery(inventory, new_value)
+
+    tax = calculate_tax(new_value)
+
+    total_deliveries += 1
+
+    print(f"Updated Inventory: {inventory}")
+    print(f"Tax amount: ${tax:.2f}")
