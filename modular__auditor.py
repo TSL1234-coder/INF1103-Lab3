@@ -26,8 +26,9 @@ def get_valid_input():
         
 
 def process_delivery(current_total, new_value):
+    if new_value != None:
+        current_total = current_total +  new_value
 
-    current_total = current_total +  new_value
     return current_total
 
 
