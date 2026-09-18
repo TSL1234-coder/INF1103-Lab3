@@ -1,0 +1,53 @@
+commit ea4fea7d97f9544165adcd6af7a13ff317c35356 (HEAD -> main, origin/main)
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:59:38 2026 +0800
+
+    Checked for negatiue number input
+
+commit 632185671df233e43d19f3469993381f16ecf6cc
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:58:22 2026 +0800
+
+    Combine all functions into a working program
+
+commit 33d4b799b7e2e96a899bf5f748b7c3e7c566b9df
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:45:14 2026 +0800
+
+    Added delivery count variable
+
+commit 840e2570f842f93a462f0ea165c6aefdd3f4c4ad
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:41:36 2026 +0800
+
+    Modified process_delivery() to check that new_value has a value first
+
+commit 9c63a4e06a3b9b2c7cf92172fe874df513f28f70
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:39:08 2026 +0800
+
+    Added generate_report() function
+
+commit 6b87a08e2f7b57569684878db05785c2e18e888d
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:31:57 2026 +0800
+
+    Added calculate_tax() function
+
+commit 5503b382add0f4b14770a9a7a33d22fcd555889f
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:28:37 2026 +0800
+
+    Added process_delivery() function
+
+commit 7e5830ebca169ed824f09f7fd01c31392eb43c29
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 13:08:40 2026 +0800
+
+    Added get_valid_input() function
+
+commit 65b9950019b8ea031683e37e386097f9e480b58a
+Author: Si Liang <2605328@sit.singaporetech.edu.sg>
+Date:   Fri Sep 18 12:54:03 2026 +0800
+
+    Initial Setup
