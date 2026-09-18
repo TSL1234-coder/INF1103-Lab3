@@ -2,6 +2,7 @@ import sys
 
 # Global variables
 inventory = 0 
+total_deliveries = 0
 failed_attempts = 0
 
 # ===========================
@@ -28,6 +29,7 @@ def get_valid_input():
 def process_delivery(current_total, new_value):
     if new_value != None:
         current_total = current_total +  new_value
+        total_deliveries = total_deliveries + 1
 
     return current_total
 
@@ -37,10 +39,10 @@ def calculate_tax(amount):
     print("Tax amount: " + str(tax_amount))
     return tax_amount
 
-def generate_report(total_units, rejected_entries):
+def generate_report(delivery_count, rejected_entries):
     print("Inventory Report:")
     print("===================")
-    print(f"Total Units Processed: {str(total_units)}")
+    print(f"Total Delivery Processed: {str(delivery_count)}")
     print(f"Total Rejected Entries: {str(rejected_entries)}")
 
 
